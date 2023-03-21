@@ -1,0 +1,31 @@
+--Design a store database
+
+CREATE TABLE Coffee_Shop (id INTEGER PRIMARY KEY, Item TEXT, Flavor_Profile TEXT, Price REAL, Caffeine REAL);
+
+INSERT INTO Coffee_Shop VALUES (1, "Cold Brew", "bold", 5.50, 320);
+INSERT INTO Coffee_Shop VALUES (2, "Drip Coffee", "smooth", 3.00, 350);
+INSERT INTO Coffee_Shop VALUES (3, "Espresso", "strong", 3.00, 75);
+INSERT INTO Coffee_Shop VALUES (4, "Americano", "plain", 4.00, 150);
+INSERT INTO Coffee_Shop VALUES (5, "Machiatto", "deep", 4.00, 150);
+INSERT INTO Coffee_Shop VALUES (6, "Cappuchino", "foamy", 5.50, 150);
+INSERT INTO Coffee_Shop VALUES (7, "Cafe Latte", "classic", 6.00, 150);
+INSERT INTO Coffee_Shop VALUES (8, "Cafe Meil", "honey", 6.50, 150);
+INSERT INTO Coffee_Shop VALUES (9, "Coconut Latte", "tropical", 6.50, 150);
+INSERT INTO Coffee_Shop VALUES (10, "Lavender Latte", "floral", 6.50, 150);
+INSERT INTO Coffee_Shop VALUES (11, "Mocha", "chocolate", 6.50, 150);
+INSERT INTO Coffee_Shop VALUES (12, "Tea", "herbal", 3.00, 45);
+INSERT INTO Coffee_Shop VALUES (13, "Iced Tea", "refreshing", 3.50, 45);
+INSERT INTO Coffee_Shop VALUES (14, "Hot Chocolate", "kid favorite", 5.00, 0 );
+INSERT INTO Coffee_Shop VALUES (15, "Frape", "sweet", 6.00, 0);
+
+--Display the database ordered by price. 
+SELECT * FROM Coffee_Shop ORDER BY Price asc;
+
+--What is the flavor profile of each item? 
+SELECT Item, Flavor_Profile FROM Coffee_Shop;
+
+--Display the database ordered by caffeine content. 
+SELECT * FROM Coffee_Shop ORDER BY Caffeine asc;
+
+--Which items contain no caffeine?
+SELECT Item,Caffeine FROM Coffee_Shop WHERE Caffeine =0;
