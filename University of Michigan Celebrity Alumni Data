@@ -4,57 +4,74 @@
 
 CREATE TABLE umich_alumni (id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
-    age INTEGER,
     year INTEGER,
     major TEXT,
     career TEXT);
     
-INSERT into umich_alumni VALUES (1, "Tom Brady", 45, 1999, "General Studies", "Sports");
-INSERT into umich_alumni VALUES (2, "Michael Phelps", 37, 2008, "None", "Sports");
-INSERT into umich_alumni VALUES (3, "Connor Jaeger", 31, 2014, "Engineering", "Sports");
-INSERT into umich_alumni VALUES (4, "Sam Mikulak", 30, 2014, "Psychology", "Sports");
-INSERT into umich_alumni VALUES (5, "James Earl Jones", 92, 1955, "Drama", "Acting");
-INSERT into umich_alumni VALUES (6, "Larry Page", 49, 1995, "Engineering" AND "Computer Science", "Business" AND "Tech");
-INSERT into umich_alumni VALUES (7, "General Ford", 93, 1935, "Economics", "President");
-INSERT into umich_alumni VALUES (8, "Jim Buckmaster", 60, 1990, "Medicine", "Business" AND "Tech");
-INSERT into umich_alumni VALUES (9, "Richard Costolo", 59, 1985, "Computer Science", "Business" AND "Tech");
-INSERT into umich_alumni VALUES (10, "Thomas Knoll", 62, 1984, "Computer Schience", "Business" AND "Tech");
-INSERT into umich_alumni VALUES (11, "Sanjay Gupta", 53, 1990, "Biomed", "Media" AND "Doctor");
-INSERT into umich_alumni VALUES (12, "Lucy Liu", 54, 1990, "Asian Studies", "Acting");
-INSERT into umich_alumni VALUES (13, "Claude Shannon", 0, 1990, "Engineering" AND "Mathematics", "Mathematician");
-INSERT into umich_alumni VALUES (14, "Darren Criss", 36, 2009, "Theater", "Acting");
-INSERT into umich_alumni VALUES (15, "Charlie Munger", 99, 1990, "Mathematics", "Business" AND "Tech");
-INSERT into umich_alumni VALUES (16, "Jamal Crawford", 43, 2000, "None", "Sports");
-INSERT into umich_alumni VALUES (17, "Gilda Radner", 0, 1970, "None", "Comedy");
-INSERT into umich_alumni VALUES (18, "Mike Wallace", 0, 1939, "Journalism", "Media");
-INSERT into umich_alumni VALUES (19, "John DeLorean", 0, 1956, "Business Administration", "Business" AND "Tech");
-INSERT into umich_alumni VALUES (20, "David Barger", 65, 2017, "Business Administration", "Business" AND "Tech");
-INSERT into umich_alumni VALUES (21, "Alfred Worden", 0, 1963, "Engineering", "Astronaut");
-INSERT into umich_alumni VALUES (22, "James Irwin", 0, 1957, "Engineering", "Astronaut");
-INSERT into umich_alumni VALUES (23, "David Scott", 91, 1950, "Engineering", "Astronaut");
-INSERT into umich_almuni VALUES (24, "Ann Coulter", 61, 1988, "Political Science", "Media");
-INSERT into umich_alumni VALUES (25, "Madonna", 64, 1978, "None", "Music");
-INSERT into umich_alumni VALUES (26, "Iggy Pop", 75, 1967, "None", "Music");
-INSERT into umich_alumni VALUES (27, "William Mayo", 0, 1883, "Medicine", "Doctor");
-INSERT into umich_alumni VALUES (28, "Ben Carson", 71, 1977, "Medicine", "Doctor" AND "Politician");
-INSERT into umich_alumni VALUES (29, "Kelly Johnson", 0, 1932, "Engineering", "Engineer");
-INSERT into umich_alumni VALUES (30, "Jalen Rose", 50, 1994, "None", "Sports");
-INSERT into umich_alumni VALUES (31, "Derek Jeter", 48, 1992, "None", "Sports");
-INSERT into umich_alumni VALUES (31, "Homer Stryker", 0, 1921, "Medicine", "Doctor" AND "Business");
+INSERT into umich_alumni VALUES (1, "Tom Brady", 1999, "General Studies", "Sports");
+INSERT into umich_alumni VALUES (2, "Michael Phelps", 2008, "None", "Sports");
+INSERT into umich_alumni VALUES (3, "Connor Jaeger", 2014, "Engineering", "Sports");
+INSERT into umich_alumni VALUES (4, "Sam Mikulak", 2014, "Psychology", "Sports");
+INSERT into umich_alumni VALUES (5, "James Earl Jones", 1955, "Drama", "Acting");
+INSERT into umich_alumni VALUES (6, "Larry Page", 1995, "Engineering", "Business & Tech");
+INSERT into umich_alumni VALUES (7, "General Ford", 1935, "Economics", "President");
+INSERT into umich_alumni VALUES (8, "Jim Buckmaster", 1990, "Medicine", "Business" AND "Tech");
+INSERT into umich_alumni VALUES (9, "Richard Costolo", 1985, "Computer Science", "Business & Tech");
+INSERT into umich_alumni VALUES (10, "Thomas Knoll", 1984, "Computer Schience", "Business & Tech");
+INSERT into umich_alumni VALUES (11, "Sanjay Gupta", 1990, "Biomed", "Media" AND "Doctor");
+INSERT into umich_alumni VALUES (12, "Lucy Liu", 1990, "Asian Studies", "Acting");
+INSERT into umich_alumni VALUES (13, "Claude Shannon", 1990, "Engineering", "Mathematician");
+INSERT into umich_alumni VALUES (14, "Darren Criss", 2009, "Theater", "Acting");
+INSERT into umich_alumni VALUES (15, "Charlie Munger", 1990, "Mathematics", "Business & Tech");
+INSERT into umich_alumni VALUES (16, "Jamal Crawford", 2000, "None", "Sports");
+INSERT into umich_alumni VALUES (17, "Gilda Radner", 1970, "None", "Comedy");
+INSERT into umich_alumni VALUES (18, "Mike Wallace", 1939, "Journalism", "Media");
+INSERT into umich_alumni VALUES (19, "John DeLorean", 1956, "Business Administration", "Business & Tech");
+INSERT into umich_alumni VALUES (20, "David Barger", 2017, "Business Administration", "Business & Tech");
+INSERT into umich_alumni VALUES (21, "Alfred Worden", 1963, "Engineering", "Astronaut");
+INSERT into umich_alumni VALUES (22, "James Irwin", 1957, "Engineering", "Astronaut");
+INSERT into umich_alumni VALUES (23, "David Scott", 1950, "Engineering", "Astronaut");
+INSERT into umich_alumni VALUES (24, "Ann Coulter", 1988, "Political Science", "Media");
+INSERT into umich_alumni VALUES (25, "Madonna", 1978, "None", "Music");
+INSERT into umich_alumni VALUES (26, "Iggy Pop", 1967, "None", "Music");
+INSERT into umich_alumni VALUES (27, "William Mayo", 1883, "Medicine", "Doctor");
+INSERT into umich_alumni VALUES (28, "Ben Carson", 1977, "Medicine", "Doctor & Politician");
+INSERT into umich_alumni VALUES (29, "Kelly Johnson", 1932, "Engineering", "Engineer");
+INSERT into umich_alumni VALUES (30, "Jalen Rose", 1994, "None", "Sports");
+INSERT into umich_alumni VALUES (31, "Derek Jeter", 1992, "None", "Sports");
+INSERT into umich_alumni VALUES (32, "Homer Stryker", 1921, "Medicine", "Doctor & Business");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+CREATE TABLE alumni_info (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER,
+    city_state TEXT);
     
+INSERT into alumni_info VALUES (1, "Tom Brady", 45, "San Mateo, CA");
+INSERT into alumni_info VALUES (2, "Michael Phelps", 37, "Baltimore, MD");
+INSERT into alumni_info VALUES (3, "Connor Jaeger", 31, "Fair Haven, NJ");
+INSERT into alumni_info VALUES (4, "Sam Mikulak", 30, "Huntington Beach, CA");
+INSERT into alumni_info VALUES (5, "James Earl Jones", 92, "Arkabutla, MS");
+INSERT into alumni_info VALUES (6, "Larry Page", 49, "Lansing, MI");
+INSERT into alumni_info VALUES (7, "General Ford", 93, "Omaha, NE");
+INSERT into alumni_info VALUES (8, "Jim Buckmaster", 60, "Ann Arbor, MI");
+INSERT into alumni_info VALUES (9, "Richard Costolo", 59, "Royal Oak, MI");
+INSERT into alumni_info VALUES (10, "Thomas Knoll", 63, "Ann Arbor, MI");
+INSERT into alumni_info VALUES (11, "Sanjay Gupta", 53, "Novi, MI");
+INSERT into alumni_info VALUES (12, "Lucy Liu", 54, "Jackson Heights, Queens, NY");
+INSERT into alumni_info VALUES (13, "Darren Criss", 36, "San Francisco, CA");
+INSERT into alumni_info VALUES (14, "Charlie Munger", 99, "Omaha, NE");
+INSERT into alumni_info VALUES (15, "Jamal Crawford", 43, "Seattle, WA");
+INSERT into alumni_info VALUES (16, "David Barger", 65, "Newark, NJ");
+INSERT into alumni_info VALUES (17, "David Scott", 91, "Aynor, SC");
+INSERT into alumni_info VALUES (18, "Ann Coulter", 61, "New York, NY");
+INSERT into alumni_info VALUES (19, "Madonna", 64, "Bay City, MI");
+INSERT into alumni_info VALUES (20, "Iggy Pop", 75, "Muskegon, MI");
+INSERT into alumni_info VALUES (21, "Ben Carson", 71, "Detroit, MI");
+INSERT into alumni_info VALUES (22, "Jalen Rose", 50, "Detroit, MI");
+INSERT into alumni_info VALUES (23, "Derek Jeter", 48, "Pequannock Township, NJ");
 
+/*What did the most alumni major in?*/
+SELECT major, COUNT(name) 
+    FROM umich_alumni 
+    GROUP BY major
+    ORDER BY COUNT(name) desc;
