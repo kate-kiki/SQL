@@ -30,3 +30,11 @@ SELECT artist_name
 FROM BIT_DB.spotifydata
 ORDER BY popularity desc
 LIMIT 10;
+
+/*Which artists have multiple songs on the 50 Spotify list?*/
+SELECT artist_name, COUNT(track_name) AS total_tracks
+FROM BIT_DB.SpotifyData
+GROUP BY artist_name
+HAVING total_tracks > 1
+ORDER BY total_tracks desc;
+
