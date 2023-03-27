@@ -38,5 +38,16 @@ GROUP BY artist_name
 HAVING total_tracks > 1
 ORDER BY total_tracks desc;
 
+/*How does the duration/length of each song in the top 50 Spotify list compare on average?*/
+SELECT track_name, duration_ms AS 'Duration',
+CASE
+    WHEN duration_ms > (SELECT avg(duration_ms)FROM BIT_DB.SpotifyData) THEN 'Long'
+    WHEN duration_ms < (SELECT avg(duration_ms)FROM BIT_DB.SpotifyData) THEN 'Short'
+    ELSE 'Average'
+END AS 'Song Length'
+FROM BIT_DB.SpotifyData;
+
+
+
 
 
