@@ -47,7 +47,21 @@ CASE
 END AS 'Song Length'
 FROM BIT_DB.SpotifyData;
 
-
-
-
-
+/*Where would be best to listen to each song in the top 50 Spotify list according to dancability, energy, and loudness?*/
+SELECT track_name,
+CASE
+    WHEN danceability > (SELECT avg(danceability) FROM BIT_DB.Spotifydata)
+        AND energy > (SELECT avg(energy)FROM BIT_DB.SpotifyData)
+        AND loudness > (SELECT avg(loudness) FROM BIT_DB.SpotifyData)
+        THEN 'Party'
+    WHEN danceability < (SELECT avg(danceability) FROM BIT_DB.Spotifydata)
+        AND energy > (SELECT avg(energy)FROM BIT_DB.SpotifyData)
+        AND loudness > (SELECT avg(loudness) FROM BIT_DB.SpotifyData)
+        THEN 'Gym'
+    WHEN danceability < (SELECT avg(danceability) FROM BIT_DB.Spotifydata)
+        AND energy < (SELECT avg(energy)FROM BIT_DB.SpotifyData)
+        AND loudness < (SELECT avg(loudness) FROM BIT_DB.SpotifyData)
+        THEN 'Study' 
+    ELSE 'Home'
+END AS 'Situation'
+FROM BIT_DB.Spotifydata;
