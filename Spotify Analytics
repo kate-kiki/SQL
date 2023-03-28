@@ -65,3 +65,16 @@ CASE
     ELSE 'Home'
 END AS 'Situation'
 FROM BIT_DB.Spotifydata;
+
+/*I created a temp table to calculate the average popularity for the artists in the Spotify data table. 
+Then, for every artist with an average popularity of 90 or above, I showed their name, their average popularity, and label them as a “Top Star”.*/
+WITH avgpopularity_CTE AS (
+SELECT artist_name, avg(popularity) AS avg_pop
+FROM SpotifyData
+GROUP BY artist_name)
+
+SELECT  artist_name,
+        avg_pop,
+        'Top Star' AS tag
+FROM avgpopularity_CTE
+WHERE avg_pop>=90;
