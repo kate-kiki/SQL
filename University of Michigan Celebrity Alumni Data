@@ -1,6 +1,4 @@
-/* Create table about the people and what they do here */
-
-/*University of Michigan Celebrity Alumni Hall of Fame*/
+/*For this project, I created a two tables, input data regarding University of Michigan Celebrity Alumni Hall of Fame, and performed analytics on the data in SQLite Studio.*/
 
 CREATE TABLE umich_alumni (id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
@@ -68,10 +66,29 @@ INSERT into alumni_info VALUES (19, "Madonna", 64, "Bay City, MI");
 INSERT into alumni_info VALUES (20, "Iggy Pop", 75, "Muskegon, MI");
 INSERT into alumni_info VALUES (21, "Ben Carson", 71, "Detroit, MI");
 INSERT into alumni_info VALUES (22, "Jalen Rose", 50, "Detroit, MI");
-INSERT into alumni_info VALUES (23, "Derek Jeter", 48, "Pequannock Township, NJ");
+INSERT into alumni_info VALUES (23, "Derek Jeter", 48, "Pequannock Township, NJ")
+INSERT into alumni_info VALUES (24, "Gilda Radner", 0, "Detroit, MI")
+INSERT into alumni_info VALUES (25, "Mike Wallace", 0, "Brookline, MA")
+INSERT into alumni_info VALUES (26, "John DeLorean", 0, "Detroit, MI")
+INSERT into alumni_info VALUES (27, "Alfred Worden", 0, "Jackson, MI")
+INSERT into alumni_info VALUES (28, "James Irwin", 0, "Pittsburgh, PA")
+INSERT into alumni_info VALUES (29, "William Mayo", 0, "Le Sueur, MN")
+INSERT into alumni_info VALUES (30, "Homer Stryker", 0, "Wakeshma Township, MI")
+INSERT into alumni_info VALUES (31 "Kelly Johnson", 0, "Ishpemig, MI")
+INSERT into alumni_info VALUES (32, "Claude Shannon", 0, "Petoskey, MI");
+
 
 /*What did the most alumni major in?*/
 SELECT major, COUNT(name) 
     FROM umich_alumni 
     GROUP BY major
     ORDER BY COUNT(name) desc;
+    
+/*How many famous UMich Alumni actually never graduated from UMich?*/
+SELECT COUNT(name)
+    FROM umich_alumni
+    WHERE major = "None";
+  
+ 
+
+
