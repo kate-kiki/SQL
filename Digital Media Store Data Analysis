@@ -1,42 +1,51 @@
+/*Show Customers (their full names, customer ID, and country) who are not in the US.*/
 SELECT firstname, lastname, customerid, country
 FROM chinook.customers
 WHERE country <> 'USA'
 ORDER BY country;
 
+/*Show only the Customers from Brazil. Find the Invoices of customers who are from Brazil.*/
 SELECT cust.FirstName, cust.LastName, inv.InvoiceId, inv.InvoiceDate, inv.BillingCountry
 FROM chinook.customers AS cust
 INNER JOIN chinook.invoices AS inv
     ON inv.CustomerId = cust.CustomerId
 WHERE inv.BillingCountry = 'Brazil';
 
+/*Show the Employees who are Sales Agents.*/
 SELECT * FROM chinook.employees
 WHERE title LIKE '%sales%agent%';
 
+/*Find a unique/distinct list of billing countries from the Invoice table.*/
 SELECT DISTINCT billingcountry
 FROM chinook.invoices;
 
+/*Provide a query that shows the invoices associated with each sales agent.*/
 SELECT agent.FirstName, agent.LastName, inv.InvoiceID
 FROM chinook.employees AS agent
 JOIN chinook.customers AS cust
     ON cust.SupportRepID = agent.EmployeeId
 JOIN chinook.invoices AS inv
     ON inv.CustomerId = cust.CustomerId;
-    
+  
+/*Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.*/
 SELECT agent.FirstName, agent.LastName,cust.FirstName, cust.LastName, cust.Country, inv.Total
 FROM chinook.employees AS agent
 JOIN chinook.customers AS cust
     ON cust.SupportRepID = agent.EmployeeId
 JOIN chinook.invoices AS inv
     ON inv.CustomerId = cust.CustomerId;
-    
+  
+/*How many Invoices were there in 2009?*/
 SELECT COUNT(*)
 FROM chinook.invoices
 WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
 
+/*What are the total sales for 2009?8?
 SELECT SUM(Total)
 FROM chinook.invoices
 WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
 
+/*Write a query that includes the purchased track name and artist name with each invoice line ID.*/
 SELECT 
     track.Name AS 'Track', 
     art.Name AS 'Artist', 
@@ -51,7 +60,7 @@ JOIN chinook.albums AS alb
 JOIN chinook.artists AS art
     ON alb.ArtistId = art.ArtistId;
     
-
+/*Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.*/
 SELECT 
     track.Name AS 'Track', 
     alb.Title AS 'Album', 
@@ -65,6 +74,7 @@ JOIN chinook.media_types AS media
 JOIN chinook.genres AS gen
     ON track.GenreId = gen.GenreId;
     
+/*Show the total sales made by each sales agent.*/
 SELECT 
     emp.FirstName, 
     emp.LastName,
@@ -77,6 +87,7 @@ JOIN chinook.invoices AS inv
 WHERE emp.title LIKE '%sales%agent%'
 GROUP BY emp.FirstName;
 
+/*Which sales agent made the most dollars in sales in 2009?*/
 SELECT 
     emp.FirstName, 
     emp.LastName,
@@ -92,46 +103,3 @@ GROUP BY emp.FirstName
 ORDER BY ROUND(SUM(Inv.Total),2) desc
 LIMIT 1;
 
-WITH cte_2009total AS (
-    SELECT SUM(inv.Total)
-    FROM chinook.invoices AS inv
-    WHERE inv.InvoiceDate LIKE '2009%'),
-    
-    cte_2010total AS (
-    SELECT SUM(inv.total)
-    FROM chinook.invoices AS inv
-    WHERE inv.InvoiceDate LIKE '2010%'),
-    
-    cte_2011total AS (
-    SELECT SUM(inv.total)
-    FROM chinook.invoices AS inv
-    WHERE inv.InvoiceDate LIKE '2011%'),
-    
-    cte_2012total AS (
-    SELECT SUM(inv.total)
-    FROM chinook.invoices AS inv
-    WHERE inv.InvoiceDate LIKE '2012%'),
-    
-    cte_2013total AS (
-    SELECT SUM(inv.total)
-    FROM chinook.invoices AS inv
-    WHERE inv.InvoiceDate LIKE '2013%')
-    
-SELECT * FROM cte_2013total
-UNION
-SELECT * FROM cte_2012total
-UNION
-SELECT * FROM cte_2011total
-UNION
-SELECT * FROM cte_2010total
-UNION
-SELECT * FROM cte_2009total;
-
-
-SELECT SUM(inv.total)
-    FROM chinook.invoices AS inv
-    WHERE inv.InvoiceDate LIKE ('2012%')
-UNION
-SELECT SUM(inv.total)
-    FROM chinook.invoices AS inv
-    WHERE inv.InvoiceDate LIKE '2011%')
